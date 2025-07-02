@@ -1,5 +1,5 @@
-
 import { Home, Hammer, PaintBucket, Wrench } from "lucide-react";
+import { ScrollDownButton } from "@/components/ui/scroll-down-button";
 
 const Services = () => {
   const services = [
@@ -29,10 +29,10 @@ const Services = () => {
     <section id="process" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             Our Services
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Comprehensive home building and renovation services backed by decades of experience
           </p>
         </div>
@@ -41,15 +41,15 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-slate-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 text-center"
+              className="bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 text-center border border-gray-100"
             >
-              <div className="bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="bg-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                 <service.icon className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-4">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">
                 {service.title}
               </h3>
-              <p className="text-slate-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 {service.description}
               </p>
             </div>

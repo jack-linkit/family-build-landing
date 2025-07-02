@@ -1,7 +1,6 @@
-
 const Footer = () => {
   return (
-    <footer className="bg-slate-800 text-white py-12">
+    <footer className="bg-gray-800 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <div className="mb-6">
@@ -11,12 +10,12 @@ const Footer = () => {
               className="h-20 w-auto mx-auto filter brightness-110 contrast-110"
             />
           </div>
-          <p className="text-slate-300 text-lg mb-8 font-light">
+          <p className="text-gray-300 text-lg mb-8 font-light">
             Building exceptional homes since 1999
           </p>
-          <div className="border-t border-slate-600 pt-6">
-            <p className="text-slate-400 text-sm">
-              © 2024 Misty Harbor Builders. All rights reserved. | Website by VisionFriendly.com
+          <div className="border-t border-gray-600 pt-6">
+            <p className="text-gray-400 text-sm">
+              © 2024 Misty Harbor Builders. All rights reserved. 
             </p>
           </div>
         </div>

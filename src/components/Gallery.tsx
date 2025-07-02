@@ -1,36 +1,37 @@
+import { ScrollDownButton } from "@/components/ui/scroll-down-button";
 
 const Gallery = () => {
   const images = [
     {
-      src: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=6000&q=80",
-      alt: "Modern kitchen design",
-      category: "Interior"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=7952&q=80",
-      alt: "Custom home exterior",
+      src: "/uploads/0005.jpg",
+      alt: "Beautiful home exterior",
       category: "Exterior"
     },
     {
-      src: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=8256&q=80",
+      src: "/uploads/11458462_l-2015-min.jpg",
+      alt: "Custom home design",
+      category: "Design"
+    },
+    {
+      src: "/uploads/74258785_l-2015-min.jpg",
       alt: "Luxury living space",
       category: "Interior"
     },
     {
-      src: "https://images.unsplash.com/photo-1472396961693-142e6e269027?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3634&q=80",
-      alt: "Beautiful landscape",
-      category: "Landscape"
+      src: "/uploads/large_57-min.jpg",
+      alt: "Family home",
+      category: "Family"
     }
   ];
 
   return (
-    <section id="gallery" className="py-20 bg-slate-100">
+    <section id="gallery" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             Our Work
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Explore our portfolio of custom homes and renovation projects
           </p>
         </div>
