@@ -19,12 +19,13 @@ const Navigation = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="text-2xl font-bold text-slate-800">
-              MISTY HARBOR
-              <div className="text-sm font-normal text-slate-600 tracking-wider">
-                BUILDERS
-              </div>
-            </div>
+            <a href="/" className="block">
+              <img 
+                src="/lovable-uploads/bc69ca0b-2229-4651-8a99-e05ba51e1f5c.png"
+                alt="Misty Harbor Builders"
+                className="h-12 w-auto"
+              />
+            </a>
           </div>
 
           {/* Desktop Navigation */}

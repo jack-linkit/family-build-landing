@@ -6,14 +6,14 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div className="text-center md:text-left">
-              <h2 className="text-4xl md:text-5xl font-light text-amber-600 mb-2">
+              <h2 className="text-4xl md:text-5xl font-light text-blue-600 mb-2">
                 Beautiful Homes
               </h2>
               <h3 className="text-3xl md:text-4xl font-bold text-blue-900 mb-8">
                 SINCE 1999
               </h3>
             </div>
-            <div className="w-12 h-px bg-amber-600 mx-auto md:mx-0 mb-8"></div>
+            <div className="w-12 h-px bg-blue-600 mx-auto md:mx-0 mb-8"></div>
             <p className="text-lg text-slate-700 leading-relaxed">
               For over two decades, Misty Harbor Builders has been crafting exceptional custom homes 
               that reflect our clients' dreams and our commitment to quality. Every home we build 

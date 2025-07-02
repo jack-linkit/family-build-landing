@@ -18,7 +18,7 @@ const Hero = () => {
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
           BUILDING HIGH QUALITY HOMES
         </h1>
-        <h2 className="text-2xl md:text-4xl font-light mb-8 text-amber-200">
+        <h2 className="text-2xl md:text-4xl font-light mb-8 text-blue-100">
           FOR OVER 25 YEARS
         </h2>
         <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed">
@@ -27,7 +27,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
             size="lg" 
-            className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 text-lg font-semibold transition-all duration-300 transform hover:scale-105"
+            className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-3 text-lg font-semibold transition-all duration-300 transform hover:scale-105"
           >
             View Our Homes
           </Button>
