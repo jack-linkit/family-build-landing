@@ -4,11 +4,12 @@ const Footer = () => {
     <footer className="bg-slate-800 text-white py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <div className="text-2xl font-bold mb-2">
-            MISTY HARBOR
-            <div className="text-sm font-normal tracking-wider">
-              BUILDERS
-            </div>
+          <div className="mb-4">
+            <img 
+              src="/lovable-uploads/bc69ca0b-2229-4651-8a99-e05ba51e1f5c.png"
+              alt="Misty Harbor Builders"
+              className="h-16 w-auto mx-auto"
+            />
           </div>
           <p className="text-slate-400 mb-4">
             Building exceptional homes since 1999
