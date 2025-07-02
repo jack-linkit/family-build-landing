@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 const SECTION_IDS = [
@@ -13,6 +13,7 @@ const SECTION_IDS = [
 export const StickyScrollDownButton = () => {
   const [currentSection, setCurrentSection] = useState(SECTION_IDS[0]);
   const [navHeight, setNavHeight] = useState(0);
+  const isScrolling = useRef(false);
 
   useEffect(() => {
     // Get navbar height
@@ -30,7 +31,7 @@ export const StickyScrollDownButton = () => {
         }
       },
       {
-        threshold: 0.5,
+        threshold: 0.15,
         rootMargin: `-${navHeight}px 0px 0px 0px`,
       }
     );
@@ -47,20 +48,44 @@ export const StickyScrollDownButton = () => {
 
   if (!isLastSection && !nextSection) return null;
 
+  function scrollToSection(sectionId: string) {
+    const section = document.getElementById(sectionId);
+    const nav = document.querySelector('nav');
+    const navH = nav ? nav.getBoundingClientRect().height : 0;
+    if (section) {
+      const rect = section.getBoundingClientRect();
+      const targetY = rect.top + window.scrollY - navH;
+      window.scrollTo({ top: targetY, behavior: 'smooth' });
+    }
+  }
+
+  function handleClick() {
+    if (isScrolling.current) return;
+    isScrolling.current = true;
+    if (isLastSection) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (nextSection) {
+      scrollToSection(nextSection);
+    }
+    // Debounce: allow next click after scroll ends
+    setTimeout(() => {
+      isScrolling.current = false;
+      // Manually update current section after scroll completes (fallback for Safari)
+      const sectionInView = SECTION_IDS.find((id) => {
+        const el = document.getElementById(id);
+        if (!el) return false;
+        const rect = el.getBoundingClientRect();
+        return rect.top <= navHeight + 10 && rect.bottom > navHeight + 10;
+      });
+      if (sectionInView) setCurrentSection(sectionInView);
+    }, 1200);
+  }
+
   return (
     <button
       className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 focus:outline-none"
       aria-label={isLastSection ? "Scroll to top" : "Scroll to next section"}
-      onClick={() => {
-        if (isLastSection) {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else if (nextSection) {
-          const section = document.getElementById(nextSection);
-          if (section) {
-            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }
-      }}
+      onClick={handleClick}
       type="button"
       style={{ background: 'none', border: 'none', padding: 0, margin: 0, boxShadow: 'none' }}
     >

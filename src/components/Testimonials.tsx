@@ -3,7 +3,7 @@ import { ScrollDownButton } from "@/components/ui/scroll-down-button";
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-20 bg-gray-100 text-gray-800 scroll-mt-20">
+    <section id="testimonials" className="py-20 bg-gray-100 text-gray-800 scroll-mt-20 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>

@@ -16,21 +16,23 @@ const Navigation = () => {
   const [currentSection, setCurrentSection] = useState(SECTION_IDS[0].id);
 
   useEffect(() => {
-    // Get navbar height
     const nav = document.querySelector('nav');
     const navHeight = nav ? nav.getBoundingClientRect().height : 0;
-    // Intersection Observer to track current section
+
     const observer = new window.IntersectionObserver(
       (entries) => {
-        const visible = entries.filter(e => e.isIntersecting && e.intersectionRatio > 0.5);
+        const visible = entries.filter(
+          (e) => e.isIntersecting && e.intersectionRatio > 0.15
+        );
         if (visible.length > 0) {
-          // Pick the first visible section in the list order
-          const first = SECTION_IDS.find(s => visible.some(e => e.target.id === s.id));
+          const first = SECTION_IDS.find((s) =>
+            visible.some((e) => e.target.id === s.id)
+          );
           if (first) setCurrentSection(first.id);
         }
       },
       {
-        threshold: 0.5,
+        threshold: 0.15,
         rootMargin: `-${navHeight}px 0px 0px 0px`,
       }
     );
@@ -41,26 +43,6 @@ const Navigation = () => {
     return () => observer.disconnect();
   }, []);
 
-  function springEase(t) {
-    return 1 - Math.cos(t * Math.PI / 2) * Math.exp(-3 * t);
-  }
-  function springScrollTo(targetY, duration = 1400) {
-    const startY = window.scrollY;
-    const diff = targetY - startY;
-    let start = null;
-    function step(timestamp) {
-      if (!start) start = timestamp;
-      const elapsed = timestamp - start;
-      const t = Math.min(elapsed / duration, 1);
-      const eased = springEase(t);
-      window.scrollTo(0, startY + diff * eased);
-      if (t < 1) {
-        window.requestAnimationFrame(step);
-      }
-    }
-    window.requestAnimationFrame(step);
-  }
-
   const handleNavClick = (id) => (e) => {
     e.preventDefault();
     setIsOpen(false);
@@ -70,7 +52,7 @@ const Navigation = () => {
     if (section) {
       const rect = section.getBoundingClientRect();
       const targetY = rect.top + window.scrollY - navH;
-      springScrollTo(targetY, 1400);
+      window.scrollTo({ top: targetY, behavior: 'smooth' });
     }
   };
 
