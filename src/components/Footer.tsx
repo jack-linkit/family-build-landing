@@ -1,3 +1,5 @@
+import { getImagePath } from "@/lib/utils";
+
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-12">
@@ -5,7 +7,7 @@ const Footer = () => {
         <div className="text-center">
           <div className="mb-6">
             <img 
-              src="/lovable-uploads/bc69ca0b-2229-4651-8a99-e05ba51e1f5c.png"
+              src={getImagePath("/lovable-uploads/bc69ca0b-2229-4651-8a99-e05ba51e1f5c.png")}
               alt="Misty Harbor Builders"
               className="h-20 w-auto mx-auto filter brightness-110 contrast-110"
             />

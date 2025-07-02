@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
+import { getImagePath } from "@/lib/utils";
 
 const SECTION_IDS = [
   { name: "Home", id: "hero" },
@@ -81,7 +82,7 @@ const Navigation = () => {
           <div className="flex items-center">
             <a href="/" className="block">
               <img 
-                src="/lovable-uploads/bc69ca0b-2229-4651-8a99-e05ba51e1f5c.png"
+                src={getImagePath("/lovable-uploads/bc69ca0b-2229-4651-8a99-e05ba51e1f5c.png")}
                 alt="Misty Harbor Builders"
                 className="h-12 w-auto"
               />

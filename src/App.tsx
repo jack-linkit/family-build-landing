@@ -8,12 +8,17 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Get the base path - matches vite.config.ts configuration
+const getBasename = () => {
+  return import.meta.env.PROD ? '/family-build-landing' : '';
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={getBasename()}>
         <Routes>
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

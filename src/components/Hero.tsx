@@ -1,6 +1,7 @@
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollDownButton } from "@/components/ui/scroll-down-button";
+import { getImagePath } from "@/lib/utils";
 
 // Spring easing function
 function springEase(t: number) {
@@ -32,7 +33,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `linear-gradient(rgba(20, 14, 4, 0.55), rgba(20, 14, 4, 0.55)), url('/uploads/11_410OtisAvenue_3_FamilyRoom_HiRes.jpg')`
+          backgroundImage: `linear-gradient(rgba(20, 14, 4, 0.55), rgba(20, 14, 4, 0.55)), url('${getImagePath("/uploads/11_410OtisAvenue_3_FamilyRoom_HiRes.jpg")}')`
         }}
       />
 

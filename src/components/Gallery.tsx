@@ -1,31 +1,32 @@
 import { ScrollDownButton } from "@/components/ui/scroll-down-button";
+import { getImagePath } from "@/lib/utils";
 
 const Gallery = () => {
   const images = [
     {
-      src: "/uploads/0005.jpg",
+      src: getImagePath("/uploads/0005.jpg"),
       alt: "Beautiful home exterior",
       category: "Exterior"
     },
     {
-      src: "/uploads/11458462_l-2015-min.jpg",
+      src: getImagePath("/uploads/11458462_l-2015-min.jpg"),
       alt: "Custom home design",
       category: "Design"
     },
     {
-      src: "/uploads/74258785_l-2015-min.jpg",
+      src: getImagePath("/uploads/74258785_l-2015-min.jpg"),
       alt: "Luxury living space",
       category: "Interior"
     },
     {
-      src: "/uploads/large_57-min.jpg",
+      src: getImagePath("/uploads/large_57-min.jpg"),
       alt: "Family home",
       category: "Family"
     }
   ];
 
   return (
-    <section id="gallery" className="py-20 bg-gray-50">
+    <section id="gallery" className="py-20 bg-gray-50 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">

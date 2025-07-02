@@ -19,5 +19,6 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/family-build-landing/',
+  // Only use base path for production builds (GitHub Pages)
+  base: mode === 'production' ? '/family-build-landing/' : '/',
 }));

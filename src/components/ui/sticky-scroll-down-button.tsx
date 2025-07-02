@@ -10,28 +10,6 @@ const SECTION_IDS = [
   "contact"
 ];
 
-function springEase(t: number) {
-  return 1 - Math.cos(t * Math.PI / 2) * Math.exp(-3 * t);
-}
-
-function springScrollTo(targetY: number, duration = 1400) {
-  const startY = window.scrollY;
-  const diff = targetY - startY;
-  let start: number | null = null;
-
-  function step(timestamp: number) {
-    if (!start) start = timestamp;
-    const elapsed = timestamp - start;
-    const t = Math.min(elapsed / duration, 1);
-    const eased = springEase(t);
-    window.scrollTo(0, startY + diff * eased);
-    if (t < 1) {
-      window.requestAnimationFrame(step);
-    }
-  }
-  window.requestAnimationFrame(step);
-}
-
 export const StickyScrollDownButton = () => {
   const [currentSection, setCurrentSection] = useState(SECTION_IDS[0]);
   const [navHeight, setNavHeight] = useState(0);
@@ -75,16 +53,11 @@ export const StickyScrollDownButton = () => {
       aria-label={isLastSection ? "Scroll to top" : "Scroll to next section"}
       onClick={() => {
         if (isLastSection) {
-          // Scroll to top, offset by nav height
-          springScrollTo(0, 1400);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         } else if (nextSection) {
           const section = document.getElementById(nextSection);
-          const nav = document.querySelector('nav');
-          const navH = nav ? nav.getBoundingClientRect().height : 0;
           if (section) {
-            const rect = section.getBoundingClientRect();
-            const targetY = rect.top + window.scrollY - navH;
-            springScrollTo(targetY, 1400);
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         }
       }}

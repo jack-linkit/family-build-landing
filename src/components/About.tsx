@@ -1,8 +1,9 @@
 import { ScrollDownButton } from "@/components/ui/scroll-down-button";
+import { getImagePath } from "@/lib/utils";
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <section id="about" className="py-20 bg-gray-50 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
@@ -27,7 +28,7 @@ const About = () => {
           </div>
           <div className="relative">
             <img
-              src="/uploads/1family3-min.jpg"
+              src={getImagePath("/uploads/1family3-min.jpg")}
               alt="Beautiful custom home exterior"
               className="rounded-lg shadow-xl w-full h-[400px] object-cover"
             />
